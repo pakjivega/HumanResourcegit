@@ -4,4 +4,12 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+        <servlet-name>MyServlet2</servlet-name>
+        <servlet-class>com.pakjivega.prototypehumanresource.MyServlet2</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MyServlet2</servlet-name>
+        <url-pattern>/MyServlet2</url-pattern>
+    </servlet-mapping>
 </web-app>
