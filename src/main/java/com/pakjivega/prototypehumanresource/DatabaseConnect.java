@@ -1,7 +1,6 @@
 package com.pakjivega.prototypehumanresource;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -13,9 +12,9 @@ import javax.sql.DataSource;
 public class DatabaseConnect {
 
 	private static final String DRIVER = "com.mysql.jdbc.Driver";
-	private static final String URL = "jdbc/mydb";
-	private static final String USER = "";
-	private static final String PASSWD = "";
+	//private static final String URL = "jdbc/mydb";
+	//private static final String USER = "";
+	//private static final String PASSWD = "";
 	
 	public int updateRow(String consultaSQL) {
 		Connection conection = null;
