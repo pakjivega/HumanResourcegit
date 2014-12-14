@@ -5,22 +5,36 @@
 
 <body>
 	<fieldset>
-	<legend>List Employees:</legend>
+		<legend>List Employees:</legend>
+		<%
+			List<Employee> listEmployees = Employee.selectEmployees();
+		%>
+		<table border="1">
+			<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Agency</th>
+			<th>DOB</th>
+			</tr>
+			<%
+				for (Employee employee : listEmployees) {
+			%>
+			<tr>
+				<td><%=employee.getId()%>
+			</td>
+			<td><%=employee.getName()%>
+			</td>
+			<td><%=employee.getAgency()%>
+			</td>
+			<td><%=employee.getDateOfBirth()%>
+			 </td></tr>
 	<%
-		List<Employee> listEmployees = Employee.selectEmployees();
-		
-		for(Employee employee:listEmployees){ 
+		}
 	%>
-	<%=employee.getId()%>
-	<%=employee.getName()%>
-	<%=employee.getAgency()%>
-	<%=employee.getDateOfBirth()%>
-	<br />
-	<%
-			} 
-	%>
+	</table>
 	</fieldset>
 	
 	<a href="NewEmployee.jsp">New Employee</a>
-</body>
+
+			</body>
 </html>
