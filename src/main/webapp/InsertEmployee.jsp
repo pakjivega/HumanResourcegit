@@ -1,18 +1,22 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="com.pakjivega.prototypehumanresource.Employee"%>
 
 <%
+SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+
 String id= request.getParameter("id");
 String name= request.getParameter("name");
-String dateofbirth= request.getParameter("dateofbirth");
+String dateofbirthString= request.getParameter("dateofbirth");
 String agency= request.getParameter("agency");
 
+Date dateofbirth =  formatter.parse(dateofbirthString);
 
-String insertSQL= "insert into employee (id, name, agency) values ";
-insertSQL+= "(" +id+ ",'" +name + "','" +agency+"')";
 Employee employee = new Employee();
 employee.setId(Integer.valueOf(id));
 employee.setName(name);
 employee.setAgency(agency);
+employee.setDateOfBirth(dateofbirth);
 employee.save();
 response.sendRedirect("ListEmployees.jsp");
 %>

@@ -1,5 +1,6 @@
 package com.pakjivega.prototypehumanresource;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -16,7 +17,14 @@ public class Employee {
 	private int id;
 	private String name;
 	private String agency;
+	private Date dateofbirth;
 	
+	public Date getDateOfBirth() {
+		return dateofbirth;
+	}
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateofbirth = dateOfBirth;
+	}
 	public int getId() {
 		return id;
 	}
