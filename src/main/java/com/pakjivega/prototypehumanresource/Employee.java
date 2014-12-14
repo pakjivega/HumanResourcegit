@@ -2,7 +2,17 @@ package com.pakjivega.prototypehumanresource;
 
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+@Entity
+@Table(name="employee")
 public class Employee {
+	@Id
 	private int id;
 	private String name;
 	private String agency;
@@ -26,14 +36,18 @@ public class Employee {
 		this.agency = agency;
 	}
 	public void save() {
-		String querySQL = "insert into employee  ( id, name, agency ) values ( " + this.id + " , '" + this.name + "',  '" + this.agency + "' ) ";
-		DatabaseConnect<Employee> db = new DatabaseConnect<Employee>();
-		db.updateRow(querySQL);
+		SessionFactory sessionFactory=HibernateDB.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		session.save(this);
+		session.getTransaction().commit();
+		
 	}
 	public static List<Employee> selectEmployees() {
-		String querySQL= "select id, name, agency from employee ";
-		DatabaseConnect<Employee> db = new DatabaseConnect<Employee>();
-		List<Employee> listEmployees = db.selectRows(querySQL, Employee.class);
+		SessionFactory sessionFactory = HibernateDB.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		List<Employee> listEmployees = session.createQuery( " from Employee employee").list();
+		session.close();
 		return listEmployees;
 	}
 }
