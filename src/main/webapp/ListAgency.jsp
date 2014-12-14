@@ -8,15 +8,23 @@
 	<legend>List Agencies:</legend>
 	<%
 		List<Agency> listAgencies = Agency.selectAgencies();
-		
+	%>
+	<table border="1">
+		<tr>
+		<th>Id</th>
+		<th>Name</th>
+		</tr>
+		<%
 		for(Agency agency:listAgencies){ 
 	%>
-	<%=agency.getId()%>
-	<%=agency.getName()%>
-	<br />
+	<tr>
+				<td><%=agency.getId()%></td>
+				<td><%=agency.getName()%></td>
+	 </td></tr>
 	<%
 			} 
 	%>
+	</table>
 	</fieldset>
 	
 	<a href="NewAgency.jsp">New Agency</a>
