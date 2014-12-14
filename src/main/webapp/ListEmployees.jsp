@@ -14,6 +14,7 @@
 	<%=employee.getId()%>
 	<%=employee.getName()%>
 	<%=employee.getAgency()%>
+	<%=employee.getDateOfBirth()%>
 	<br />
 	<%
 			} 
