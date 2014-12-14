@@ -1,4 +1,4 @@
-package com.pakjivega.prototypehumanresource;
+package com.pakjivega.prototypehumanresource.bean;
 
 import java.util.Date;
 import java.util.List;
@@ -10,27 +10,31 @@ import javax.persistence.Table;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import com.pakjivega.prototypehumanresource.HibernateDB;
+
 @Entity
 @Table(name="employee")
-public class Employee {
+public class Employee  {
 	@Id
 	private int id;
-	private String name;
+ 	private String name;
 	private String agency;
 	private Date dateofbirth;
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	public Date getDateOfBirth() {
 		return dateofbirth;
 	}
 	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateofbirth = dateOfBirth;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
+	
 	public String getName() {
 		return name;
 	}

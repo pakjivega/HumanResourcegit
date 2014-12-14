@@ -1,7 +1,6 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.Date"%>
-<%@page import="com.pakjivega.prototypehumanresource.Employee"%>
-
+<%@page import="com.pakjivega.prototypehumanresource.bean.Employee"%>
 <%
 SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
 
