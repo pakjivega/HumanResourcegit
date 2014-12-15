@@ -1,4 +1,4 @@
-package com.pakjivega.prototypehumanresource.bean;
+package com.pakjivega.prototypehumanresource.bo.bean;
 
 import java.util.Date;
 import java.util.List;
@@ -47,19 +47,19 @@ public class Employee  {
 	public void setAgency(String agency) {
 		this.agency = agency;
 	}
-	public void save() {
-		SessionFactory sessionFactory=HibernateDB.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		session.save(this);
-		session.getTransaction().commit();
-		
-	}
-	public static List<Employee> selectEmployees() {
-		SessionFactory sessionFactory = HibernateDB.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		List<Employee> listEmployees = session.createQuery( " from Employee employee").list();
-		session.close();
-		return listEmployees;
-	}
+//	public void save() {
+//		SessionFactory sessionFactory=HibernateDB.getSessionFactory();
+//		Session session = sessionFactory.openSession();
+//		session.beginTransaction();
+//		session.save(this);
+//		session.getTransaction().commit();
+//		
+//	}
+//	public static List<Employee> selectEmployees() {
+//		SessionFactory sessionFactory = HibernateDB.getSessionFactory();
+//		Session session = sessionFactory.openSession();
+//		List<Employee> listEmployees = session.createQuery( " from Employee employee").list();
+//		session.close();
+//		return listEmployees;
+//	}
 }
