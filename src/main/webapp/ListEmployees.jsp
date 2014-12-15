@@ -1,5 +1,7 @@
+<%@page import="com.pakjivega.prototypehumanresource.bo.dao.impl.EmployeeDaoImpl"%>
+<%@page import="com.pakjivega.prototypehumanresource.bo.dao.EmployeeDao"%>
 <%@page import="java.util.List"%>
-<%@page import="com.pakjivega.prototypehumanresource.bean.Employee"%>
+<%@page import="com.pakjivega.prototypehumanresource.bo.bean.Employee"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -7,7 +9,8 @@
 	<fieldset>
 		<legend>List Employees:</legend>
 		<%
-			List<Employee> listEmployees = Employee.selectEmployees();
+			EmployeeDao employeeDao = new EmployeeDaoImpl();
+			List<Employee> listEmployees = employeeDao.getAllEmployee();
 		%>
 		<table border="1">
 			<tr>

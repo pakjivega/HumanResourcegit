@@ -1,5 +1,7 @@
+<%@page import="com.pakjivega.prototypehumanresource.bo.dao.impl.AgencyDaoImpl"%>
+<%@page import="com.pakjivega.prototypehumanresource.bo.dao.AgencyDao"%>
 <%@page import="java.util.List"%>
-<%@page import="com.pakjivega.prototypehumanresource.bean.Agency"%>
+<%@page import="com.pakjivega.prototypehumanresource.bo.bean.Agency"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
@@ -7,7 +9,8 @@
 	<fieldset>
 	<legend>List Agencies:</legend>
 	<%
-		List<Agency> listAgencies = Agency.selectAgencies();
+		AgencyDao agencyDao = new AgencyDaoImpl();
+		List<Agency> listAgencies = agencyDao.getAllAgency();
 	%>
 	<table border="1">
 		<tr>
