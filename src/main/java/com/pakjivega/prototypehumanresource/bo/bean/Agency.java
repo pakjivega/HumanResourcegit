@@ -1,15 +1,9 @@
 package com.pakjivega.prototypehumanresource.bo.bean;
-
-import java.util.List;
-
+ 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
-import com.pakjivega.prototypehumanresource.HibernateDB;
 
 @Entity
 @Table(name = "agency")

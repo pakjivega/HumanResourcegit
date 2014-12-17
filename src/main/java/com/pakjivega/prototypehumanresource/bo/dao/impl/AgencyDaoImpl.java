@@ -3,17 +3,13 @@ package com.pakjivega.prototypehumanresource.bo.dao.impl;
 import java.util.List;
 
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
-import com.pakjivega.prototypehumanresource.HibernateDB;
 import com.pakjivega.prototypehumanresource.bo.bean.Agency;
-import com.pakjivega.prototypehumanresource.bo.bean.Employee;
 import com.pakjivega.prototypehumanresource.bo.dao.AgencyDao;
 
-public class AgencyDaoImpl implements AgencyDao {
-
+public class AgencyDaoImpl extends BasicDaoImpl implements AgencyDao {
+ 
 	public List<Agency> getAllAgency() {
-		SessionFactory sessionFactory = HibernateDB.getSessionFactory();
+		 
 		Session session = sessionFactory.openSession();
 		List<Agency> listAgency = session.createQuery( " from Agency agency").list();
 		session.close();
@@ -21,7 +17,6 @@ public class AgencyDaoImpl implements AgencyDao {
 	}
 
 	public Agency getAgency(int id) {
-		SessionFactory sessionFactory = HibernateDB.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		//TODO query by id
 		List<Agency> listAgency = session.createQuery( " from Agency agency").list();
@@ -30,7 +25,6 @@ public class AgencyDaoImpl implements AgencyDao {
 	}
 
 	public void updateAgency(Agency agency) {
-		SessionFactory sessionFactory=HibernateDB.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
 		session.save(agency);
