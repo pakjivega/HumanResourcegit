@@ -1,3 +1,4 @@
+<%@page import="com.pakjivega.prototypehumanresource.bo.dao.BasicDao"%>
 <%@page import="com.pakjivega.prototypehumanresource.bo.dao.impl.EmployeeDaoImpl"%>
 <%@page import="com.pakjivega.prototypehumanresource.bo.dao.EmployeeDao"%>
 <%@page import="java.text.SimpleDateFormat"%>
@@ -18,9 +19,9 @@ employee.setId(Integer.valueOf(id));
 employee.setName(name);
 employee.setAgency(agency);
 employee.setDateOfBirth(dateofbirth);
-EmployeeDao employeeDao = new EmployeeDaoImpl();
+BasicDao employeeDao = new EmployeeDaoImpl();
 System.out.println("Employee: " + employee);
-employeeDao.updateEmployee(employee);
+employeeDao.save(employee);
 
 response.sendRedirect("ListEmployees.jsp");
 %>

@@ -1,3 +1,4 @@
+<%@page import="com.pakjivega.prototypehumanresource.bo.dao.BasicDao"%>
 <%@page import="com.pakjivega.prototypehumanresource.bo.dao.impl.AgencyDaoImpl"%>
 <%@page import="com.pakjivega.prototypehumanresource.bo.dao.AgencyDao"%>
 <%@page import="java.util.List"%>
@@ -9,8 +10,10 @@
 	<fieldset>
 	<legend>List Agencies:</legend>
 	<%
-		AgencyDao agencyDao = new AgencyDaoImpl();
-		List<Agency> listAgencies = agencyDao.getAllAgency();
+		BasicDao basicDao = new AgencyDaoImpl();
+		List<Agency> listAgencies = basicDao.getAll(Agency.class) ;//employeeDao.getAllEmployee();
+		//AgencyDao agencyDao = new AgencyDaoImpl();
+		//List<Agency> listAgencies = agencyDao.getAllAgency();
 	%>
 	<table border="1">
 		<tr>
