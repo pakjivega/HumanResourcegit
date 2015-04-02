@@ -39,7 +39,7 @@
 	</table>
 	</fieldset>
 	
-	<a href="NewEmployee.jsp">New Employee</a>
+	<a href="Employee/New">New Employee</a>
 
 			</body>
 </html>

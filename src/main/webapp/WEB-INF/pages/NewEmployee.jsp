@@ -7,7 +7,7 @@
 <title>Insert new Employee</title>
 </head>
 <body>
-	<form action="InsertEmployee.jsp">
+	<form action="InsertEmployee">
 	<fieldset>
 	<legend>Form new Employee</legend>
 	<p>ID:
