@@ -7,7 +7,7 @@
 <title>Insert new Agency</title>
 </head>
 <body>
-	<form action="InsertAgency.jsp">
+	<form action="InsertAgency" method="post">
 	<fieldset>
 	<legend>Form new Agency</legend>
 	<p>ID:

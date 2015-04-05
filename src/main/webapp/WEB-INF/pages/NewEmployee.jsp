@@ -7,7 +7,7 @@
 <title>Insert new Employee</title>
 </head>
 <body>
-	<form action="InsertEmployee">
+	<form action="InsertEmployee" method="post">
 	<fieldset>
 	<legend>Form new Employee</legend>
 	<p>ID:

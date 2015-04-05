@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 	
 	@RequestMapping(method = RequestMethod.GET)
-	public String printHello(ModelMap model){
+	public String printMainMenu(ModelMap model){
 		return "index";
 	}
 }
