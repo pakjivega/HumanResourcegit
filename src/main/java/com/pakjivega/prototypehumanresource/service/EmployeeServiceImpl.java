@@ -2,19 +2,18 @@ package com.pakjivega.prototypehumanresource.service;
 
 import java.util.List;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.pakjivega.prototypehumanresource.bo.bean.Employee;
 import com.pakjivega.prototypehumanresource.bo.dao.BasicDao;
-import com.pakjivega.prototypehumanresource.bo.dao.EmployeeDao;
-import com.pakjivega.prototypehumanresource.bo.dao.impl.EmployeeDaoImpl;
 
-public class EmployeeServiceImpl implements EmployeeService {
+@Service
+public class EmployeeServiceImpl extends BaseService implements EmployeeService {
 
-	private BasicDao<Employee> employeeDao= null;
-	public EmployeeServiceImpl() {
-		ClassPathXmlApplicationContext factoria =
-		new  ClassPathXmlApplicationContext("contextHumanResource.xml");		
+	@Autowired
+	private BasicDao<Employee> employeeDao;
+	public EmployeeServiceImpl() {		
 		employeeDao = (BasicDao)factoria.getBean("employeeDAO");
 	}
 	
