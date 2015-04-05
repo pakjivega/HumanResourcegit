@@ -36,8 +36,7 @@ public class AgencyController {
 	}
 	@RequestMapping(value ="/InsertAgency",method = RequestMethod.POST)
 	public String insertAgency(Agency agency){
-		BasicDao<Agency> agencyDao = new AgencyDaoImpl();
-		agencyDao.save(agency);
+		agencyService.save(agency);
 		return "redirect:/Agency/";
 	}
 }
