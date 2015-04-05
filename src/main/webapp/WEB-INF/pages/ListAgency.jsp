@@ -10,19 +10,12 @@
 <body>
 	<fieldset>
 	<legend>List Agencies:</legend>
-	<%
-		BasicDao basicDao = new AgencyDaoImpl();
-		List<Agency> listAgencies = basicDao.getAll(Agency.class) ;//employeeDao.getAllEmployee();
-		//AgencyDao agencyDao = new AgencyDaoImpl();
-		//List<Agency> listAgencies = agencyDao.getAllAgency();
-	%>
 	<table border="1">
 		<tr>
 		<th>Id</th>
 		<th>Name</th>
 		</tr>
 		<c:forEach items="${agencies}" var="agency">
-		
 			<tr>
 				<td><c:out value="${agency.id}"/></td>
 				<td><c:out value="${agency.name}"/></td>
@@ -30,7 +23,6 @@
 		</c:forEach>
 	</table>
 	</fieldset>
-	
 	<a href="New">New Agency</a>
 </body>
 </html>
