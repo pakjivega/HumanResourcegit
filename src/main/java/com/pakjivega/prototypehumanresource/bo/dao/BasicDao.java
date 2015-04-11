@@ -6,5 +6,6 @@ public interface BasicDao<T> {
 	
 	public T get(Class<T> typeBean, int id) ;
 	public List<T> getAll(Class<T> typeBean) ;
-	public void save(T bean);
+	public T save(T bean);
+	public void delete(Class<T> typeBean,int id);
 }

@@ -2,6 +2,13 @@ package com.pakjivega.prototypehumanresource.bo.dao.impl;
 
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -11,25 +18,34 @@ import com.pakjivega.prototypehumanresource.bo.bean.Employee;
 import com.pakjivega.prototypehumanresource.bo.dao.BasicDao;
 
 public abstract class BasicDaoImpl<T> implements BasicDao<T> {
-	static SessionFactory sessionFactory = HibernateDB.getSessionFactory();
+	protected static EntityManagerFactory factoriaSession = Persistence.createEntityManagerFactory("HumanResourcePersistance");
+	@PersistenceContext
+	protected static EntityManager manager = factoriaSession.createEntityManager();
 	
 	public T get(Class<T> typeBean, int id) {
-		Session session = sessionFactory.getCurrentSession();
-		T bean = (T) session.get(typeBean, id);
+		T bean = manager.find(typeBean, id);
 		return bean;
 	}
 	public List<T> getAll(Class<T> typeBean) {
-		Session session = sessionFactory.openSession();
-		List<T> beans = session.createCriteria(typeBean).list();
-		session.close();
-		return beans;
+		TypedQuery<T> query = manager.createQuery("SELECT l FROM " + typeBean.getSimpleName() + "  l ", typeBean);
+		List<T> listBeans = null;
+		listBeans = query.getResultList();
+		return listBeans;		
 	}
-	public void save(T bean) {
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
-		session.save(bean);
-		session.getTransaction().commit();
-		session.close();
+	public T save(T bean) {
+		EntityTransaction tx = null;
+		tx = manager.getTransaction();
+		if ( !tx.isActive() )  tx.begin();
+		manager.persist(bean); 
+		tx.commit();
+		return bean;
 	}
-
+	public void delete(Class<T> typeBean, int id) {
+		T bean = get(typeBean , id);
+		EntityTransaction tx = null;
+		tx = manager.getTransaction();
+		if ( !tx.isActive() )  tx.begin();
+		manager.remove(bean);
+		tx.commit();
+	}
 }
