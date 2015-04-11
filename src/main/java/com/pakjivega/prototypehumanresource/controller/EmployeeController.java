@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.pakjivega.prototypehumanresource.bo.bean.Employee;
 import com.pakjivega.prototypehumanresource.bo.dao.BasicDao;
-import com.pakjivega.prototypehumanresource.bo.dao.impl.EmployeeDaoImpl;
 import com.pakjivega.prototypehumanresource.service.EmployeeService;
 import com.pakjivega.prototypehumanresource.service.EmployeeServiceImpl;
 

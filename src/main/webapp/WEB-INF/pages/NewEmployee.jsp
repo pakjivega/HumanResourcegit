@@ -19,7 +19,7 @@
 	</p>
 	<p>
 	dateofbirth:
-	<input type="text" name="dateOfBirth">
+	<input type="text" name="dateofbirth">
 	</p>
 	<p>
 	agency:

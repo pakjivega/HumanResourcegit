@@ -22,11 +22,11 @@ public class Employee  {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Date getDateOfBirth() {
+	public Date getDateofbirth() {
 		return dateofbirth;
 	}
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateofbirth = dateOfBirth;
+	public void setDateofbirth(Date dateofbirth) {
+		this.dateofbirth = dateofbirth;
 	}
 	
 	public String getName() {

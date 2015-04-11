@@ -1,5 +1,4 @@
 <%@page import="com.pakjivega.prototypehumanresource.bo.dao.BasicDao"%>
-<%@page import="com.pakjivega.prototypehumanresource.bo.dao.impl.AgencyDaoImpl"%>
 <%@page import="com.pakjivega.prototypehumanresource.bo.dao.AgencyDao"%>
 <%@page import="java.util.List"%>
 <%@page import="com.pakjivega.prototypehumanresource.bo.bean.Agency"%>

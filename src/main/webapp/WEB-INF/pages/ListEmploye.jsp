@@ -1,6 +1,5 @@
 <%@page import="com.pakjivega.prototypehumanresource.bo.dao.BasicDao"%>
 <%@page import="javax.persistence.Basic"%>
-<%@page import="com.pakjivega.prototypehumanresource.bo.dao.impl.EmployeeDaoImpl"%>
 <%@page import="com.pakjivega.prototypehumanresource.bo.dao.EmployeeDao"%>
 <%@page import="java.util.List"%>
 <%@page import="com.pakjivega.prototypehumanresource.bo.bean.Employee"%>
@@ -34,7 +33,7 @@
 						<c:out value="${employee.agency}"/>
 					</td>
 					<td>
-						<c:out value="${employee.dateOfBirth}"/>
+						<c:out value="${employee.dateofbirth}"/>
 					</td>
 				</tr>
 			</c:forEach>

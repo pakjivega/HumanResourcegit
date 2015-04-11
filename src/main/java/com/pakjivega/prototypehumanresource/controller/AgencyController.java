@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.pakjivega.prototypehumanresource.bo.bean.Agency;
 import com.pakjivega.prototypehumanresource.bo.bean.Employee;
 import com.pakjivega.prototypehumanresource.bo.dao.BasicDao;
-import com.pakjivega.prototypehumanresource.bo.dao.impl.AgencyDaoImpl;
-import com.pakjivega.prototypehumanresource.bo.dao.impl.EmployeeDaoImpl;
 import com.pakjivega.prototypehumanresource.service.AgencyService;
 import com.pakjivega.prototypehumanresource.service.AgencyServiceImpl;
 import com.pakjivega.prototypehumanresource.service.EmployeeService;
